@@ -1,6 +1,6 @@
 {
-  "name": "app",
-  "short_name": "app",
+  "name": "Ionic PWA",
+  "short_name": "Ionic PWA",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

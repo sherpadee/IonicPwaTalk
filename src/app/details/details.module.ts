@@ -1,26 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
 import { ComponentsModule } from '../components/components.module';
-
-import { HomePage } from './home.page';
+import { DetailsPage } from './details.page';
+import { DetailsPageResolver } from './details.resolver';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
     IonicModule,
     RouterModule.forChild([
       {
-        path: '',
-        component: HomePage
+        path: ':slug',
+        component: DetailsPage,
+        resolve: {
+          item: DetailsPageResolver
+        }
       }
     ]),
     ComponentsModule
   ],
-  declarations: [HomePage]
+  declarations: [DetailsPage],
+  providers: [DetailsPageResolver]
 })
-export class HomePageModule {}
+export class DetailsPageModule {}
